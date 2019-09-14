@@ -1,0 +1,36 @@
+<div *ngIf="!productsHttpReady">
+loading ...
+</div>
+<div id="main" *ngIf="productsHttpReady">
+  <div class="flex-col-60 p-15 m-15 flex-justify-end">
+    <app-filter></app-filter>
+    <app-sort></app-sort>
+  </div>
+  <div class="flex-row reverse-in-mobile">
+    <article class="flex-col-60 p-15">
+      <div *ngFor="let product of currentPageProducts">
+          <div class="product-item card flex-row" routerLinkActive="active">
+            <div class="product-item-image">
+              <img class="responsive-img" [src]="product.thumbnailUrl" [alt]="product.name">
+            </div>
+            <div class="product-item-descr flex-column flex-auto">
+              <h3>{{product.name}}</h3>
+              <div>{{product.description}}</div>
+              <div><span>price: </span>{{product.price}} <span>&#36;</span></div>
+            </div>
+            <div class="product-item-link flex-column flex-justify-end">
+                <a color="primary" [routerLink]="['/edit/',product.id]" >EDIT</a>
+            </div>
+          </div>
+      </div>
+    </article>
+    <aside class="flex-col-40 p-15">
+      <!-- edit product -->
+      <router-outlet></router-outlet>
+    </aside>
+  </div>
+  <div class="flex-col-60 p-15 flex-justify-end">
+      <app-pagination [itemsPerPage]="itemPerPage"></app-pagination>
+  </div>
+</div>
+

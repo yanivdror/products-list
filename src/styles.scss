@@ -1,0 +1,132 @@
+/* You can add global styles to this file, and also import other style files */
+
+*{
+  box-sizing: border-box;
+}
+
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  margin: 0;
+
+}
+
+.save-btn{
+  display: inline-block;
+  padding: 3px 5px;
+  color: #fff;
+  background: blue;
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 0;
+  font-size: 20px;
+
+}
+
+.flex-row{
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-column{
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-wrap{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-auto{
+  flex: 1 auto;
+}
+
+.flex-justify-end{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.responsive-img{
+  max-width: 100%;
+}
+
+.card {
+  padding: 5px 5px;
+  box-shadow: 0 0 25px #0000003b;
+  margin-bottom: 10px;
+}
+
+.p-15{
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.m-15{
+  margin-top:10px;
+  margin-bottom: 10px;
+}
+
+
+.flex-col{
+  &-60{
+    flex: 100%;
+    max-width: 100%;
+  }
+
+  &-with-mobile-60{
+    flex: 60%;
+    max-width: 60%;
+  }
+
+  &-40{
+    flex: 100%;
+    max-width: 100%;
+  }
+
+  &-with-mobile-40{
+    flex: 40%;
+    max-width: 40%;
+  }
+}
+
+.product-control{
+  padding: 10px 0px 5px;
+
+  &-input{
+    display: block;
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 1%;
+    min-height: 30px;
+    font-size: 16px;
+  }
+}
+
+.reverse-in-mobile{
+  flex-direction: column-reverse;
+}
+
+@media all and (min-width: 800px) {
+
+  .flex-col{
+    &-60{
+      flex: 60%;
+      max-width: 60%;
+    }
+
+    &-40{
+      flex: 40%;
+      max-width: 40%;
+    }
+  }
+
+  .reverse-in-mobile{
+    flex-direction: row;
+  }
+}

@@ -1,0 +1,11 @@
+<div *ngIf="showPagination">
+  <span
+    class="paginator-arrow"
+    *ngIf="showPrev()"
+    (click)="goPrev()">&laquo; Prev Page </span>
+  <span>{{currentPageIndex + 1}} of {{pagesArr.length}}</span>
+  <span
+  class="paginator-arrow"
+    *ngIf="showNext()"
+    (click)="goNext()"> Next Page &raquo;</span>
+</div>

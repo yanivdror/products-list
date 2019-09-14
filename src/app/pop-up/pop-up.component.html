@@ -1,0 +1,8 @@
+<div class="pop-up-wrapper" (click)="popUpService.togglePopUp('close')">
+  <div class="pop-up-content">
+      <span id="close" (click)="popUpService.togglePopUp('close')">X</span>
+      <div>
+          Thank you for updating product {{this.popUpService.productName}}
+      </div>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+
+.product-edit{
+  display: flex;
+
+  &-image{
+    max-width: 250px;
+  }
+
+  &-content{
+
+    .dollar{
+      align-self: center;
+      padding: 0 5px;
+    }
+
+  }
+}
+
+.product-edit-save-wrapper{
+  .disabled {
+    pointer-events:none;
+    background-color: #D3D3D3;
+  }
+}

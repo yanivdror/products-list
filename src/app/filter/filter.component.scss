@@ -1,0 +1,14 @@
+input{
+  padding: 2px;
+  font-size: 14px;
+  border-radius: 2px;
+}
+
+@media all and (min-width: 800px) {
+
+  input{
+    padding: 5px;
+    font-size: 18px;
+    border-radius: 5px;
+  }
+}

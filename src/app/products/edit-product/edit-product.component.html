@@ -1,0 +1,39 @@
+<form [formGroup]="form" (submit)="onSave()" class="product-edit flex-column card p-15">
+  <h1>{{product.name}} Details</h1>
+  <div>
+    <div class="product-edit-image">
+      <img class="responsive-img" [src]="product.url" [alt]="product.name">
+    </div>
+    <div class="product-edit-content">
+        <div class="product-control">
+            <input
+            class="product-control-input"
+            type="text"
+            formControlName="name"
+            placeholder="Product name"/>
+            <span *ngIf="form.get('name').invalid">please enter a valid name</span>
+        </div>
+        <div class="product-control">
+          <textarea
+          class="product-control-input"
+          rows="4"
+          formControlName="description"
+          placeholder="Product description">
+          </textarea>
+          <span *ngIf="form.get('description').invalid">please enter a valid description</span>
+        </div>
+        <div class="product-control flex-wrap">
+          <input
+          class="product-control-input price flex-col-with-mobile-40"
+          type="number"
+          formControlName="price"
+          placeholder="Product price" />
+          <span class="dollar flex-col-with-mobile-60">&#36;</span>
+          <span *ngIf="form.get('price').invalid">please enter a valid price</span>
+        </div>
+    </div>
+    <div class="product-edit-save-wrapper flex-justify-end">
+        <button class="save-btn" [class.disabled]="form.invalid" type="submit" [disabled]="form.invalid">SAVE</button>
+    </div>
+  </div>
+</form>
